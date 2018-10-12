@@ -12,7 +12,7 @@ import kotlinx.android.synthetic.main.activity_main.*
 
 abstract class BaseCameraActivity : AppCompatActivity(), View.OnClickListener {
 
-    lateinit var sheetBehavior: BottomSheetBehavior<*>
+    lateinit var descriptionBehavior: BottomSheetBehavior<*>
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -31,15 +31,15 @@ abstract class BaseCameraActivity : AppCompatActivity(), View.OnClickListener {
         val lparam = inflatedView.layoutParams as CoordinatorLayout.LayoutParams
         lparam.behavior = BottomSheetBehavior<View>()
         inflatedView.layoutParams = lparam
-        sheetBehavior = BottomSheetBehavior.from(inflatedView)
-        sheetBehavior.peekHeight = 224
+        descriptionBehavior = BottomSheetBehavior.from(inflatedView)
+        descriptionBehavior.peekHeight = 224
         //Anchor the FAB to the end of inflated bottom sheet
         val lp = fabProgressCircle.layoutParams as CoordinatorLayout.LayoutParams
         lp.anchorId = inflatedView.id
         lp.anchorGravity = Gravity.END
         fabProgressCircle.layoutParams = lp
         //Hide the fab as bottomSheet is expanded
-        sheetBehavior.setBottomSheetCallback(object : BottomSheetBehavior.BottomSheetCallback() {
+        descriptionBehavior.setBottomSheetCallback(object : BottomSheetBehavior.BottomSheetCallback() {
             override fun onStateChanged(bottomSheet: View, newState: Int) {}
             override fun onSlide(bottomSheet: View, slideOffset: Float) {
                 fab_take_photo.animate().scaleX(1 - slideOffset).scaleY(1 - slideOffset).setDuration(0).start()

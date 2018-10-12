@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.support.design.widget.BottomSheetBehavior
 import android.support.v7.widget.LinearLayoutManager
 import android.view.View
+import android.view.View.GONE
 import com.google.firebase.ml.vision.FirebaseVision
 import com.google.firebase.ml.vision.common.FirebaseVisionImage
 import com.google.firebase.ml.vision.face.FirebaseVisionFace
@@ -46,13 +47,16 @@ class FaceDetectionActivity : BaseCameraActivity() {
                     detectedFaces.clear()
                     detectedFaces.addAll(it)
                     adapter.notifyDataSetChanged()
+                    btnRetry.visibility = GONE;
+
                 }
                 .addOnFailureListener {
 
                 }
                 .addOnCompleteListener {
-                    sheetBehavior.state = BottomSheetBehavior.STATE_EXPANDED
+                    descriptionBehavior.state = BottomSheetBehavior.STATE_EXPANDED
                     fabProgressCircle.hide()
+                    btnRetry.visibility = GONE;
                 }
     }
 

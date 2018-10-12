@@ -53,7 +53,7 @@ class CardScannerActivity : BaseCameraActivity() {
                             }
                         }
                     }
-                    sheetBehavior.state = BottomSheetBehavior.STATE_EXPANDED
+                    descriptionBehavior.state = BottomSheetBehavior.STATE_EXPANDED
                     fabProgressCircle.hide()
                 }
                 .addOnFailureListener {

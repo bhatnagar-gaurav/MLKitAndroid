@@ -27,10 +27,11 @@ class HomeAdapter(private val apiList: List<PojoApi>) : RecyclerView.Adapter<Hom
             cViewHome.setOnClickListener {
                 when (currItem.id) {
                     0 -> context.startActivity(Intent(context, ImageLabelActivity::class.java))
-                    1 -> context.startActivity(Intent(context, CardScannerActivity::class.java))
-                    2 -> context.startActivity(Intent(context, BarCodeReaderActivity::class.java))
-                    3 -> context.startActivity(Intent(context, LandmarkDetectorActivity::class.java))
-                    4 -> context.startActivity(Intent(context, FaceDetectionActivity::class.java))
+                    1 -> context.startActivity(Intent(context, ImageLabelOnCloud::class.java))
+                    2 -> context.startActivity(Intent(context, CardScannerActivity::class.java))
+                    3 -> context.startActivity(Intent(context, BarCodeReaderActivity::class.java))
+                    4 -> context.startActivity(Intent(context, LandmarkDetectorActivity::class.java))
+                    5 -> context.startActivity(Intent(context, FaceDetectionActivity::class.java))
                 }
             }
         }

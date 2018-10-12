@@ -64,7 +64,7 @@ class BarCodeReaderActivity : BaseCameraActivity() {
                 }
                 .addOnCompleteListener {
                     fabProgressCircle.hide()
-                    sheetBehavior.state = BottomSheetBehavior.STATE_EXPANDED
+                    descriptionBehavior.state = BottomSheetBehavior.STATE_EXPANDED
                 }
     }
 

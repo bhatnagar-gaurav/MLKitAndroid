@@ -85,7 +85,7 @@ class LandmarkDetectorActivity : BaseCameraActivity() {
         detector.detectInImage(image)
                 .addOnCompleteListener {
                     Log.e("TAG", "completed")
-                    for (firebaseVisionLandmarks in it.result) {
+                    for (firebaseVisionLandmarks in it.result!!) {
                         val landmark = firebaseVisionLandmarks.landmark
                         tvLocationName.text = landmark
                         for (location in firebaseVisionLandmarks.locations) {
@@ -101,7 +101,7 @@ class LandmarkDetectorActivity : BaseCameraActivity() {
                     Toast.makeText(this, "Something went wrong", Toast.LENGTH_SHORT).show()
                 }
                 .addOnCompleteListener {
-                    sheetBehavior.state = BottomSheetBehavior.STATE_EXPANDED
+                    descriptionBehavior.state = BottomSheetBehavior.STATE_EXPANDED
                 }
     }
 

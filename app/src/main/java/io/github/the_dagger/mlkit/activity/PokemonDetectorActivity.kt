@@ -146,7 +146,7 @@ class PokemonDetectorActivity : BaseCameraActivity() {
                     fabProgressCircle.hide()
                     itemAdapter = PokemonAdapter(pokeList)
                     rvLabel.adapter = itemAdapter
-                    sheetBehavior.setState(BottomSheetBehavior.STATE_EXPANDED)
+                    descriptionBehavior.setState(BottomSheetBehavior.STATE_EXPANDED)
                 }
                 ?.addOnFailureListener {
                     it.printStackTrace()
